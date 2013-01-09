@@ -1,0 +1,1 @@
+C:\Projects\FS_Libraries\ScheduledServices\Scheduler.Library\obj\Release\ResolveAssemblyReference.cache

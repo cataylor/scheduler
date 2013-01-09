@@ -1,0 +1,43 @@
+﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Quartz;
+
+using FreedomSpeaks.Core.Queueing;
+using MediaEncoding.Repository;
+
+namespace Scheduler.Library.Jobs
+{
+    /// <summary>
+    /// Watches for items in the encoding retry table and posts them back into the Media Queue to attempt Encoding again
+    /// </summary>
+    /// 
+    public class RetryMediaEncodingQueueWatcher : BaseJob
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// 
+        public override void RunJob(JobExecutionContext context)
+        {
+            var retryRepo = new MediaEncoderResultRepository();
+
+            var allRecords = retryRepo.GetAll();
+            
+            if (allRecords.Any())
+            {
+                foreach (var result in allRecords)
+                {
+                    var message = String.Format("{0}|{1}|{2}", result.ReportId, result.MediaId, result.RetryCount);
+                    QueueingUtil.AddMessage(QueueStore.CsMediaEncoder, message);
+                }
+            }
+        }
+
+        
+    }
+}

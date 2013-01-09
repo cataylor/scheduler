@@ -1,0 +1,5 @@
+C:\Projects\FS_Libraries\ScheduledServices\Scheduler.Service\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Projects\FS_Libraries\ScheduledServices\Scheduler.Service\obj\x86\Release\Scheduler.Service.JobService.resources
+C:\Projects\FS_Libraries\ScheduledServices\Scheduler.Service\obj\x86\Release\Scheduler.Service.ProjectInstaller.resources
+C:\Projects\FS_Libraries\ScheduledServices\Scheduler.Service\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Projects\FS_Libraries\ScheduledServices\Scheduler.Service\obj\x86\Release\GenerateResource.write.1.tlog
